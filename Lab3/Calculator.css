@@ -127,6 +127,14 @@ h3 {
 }
 
 
+#tipAmount,
+#totalBill {
+    font-weight: bold;
+    color: #333;
+}
+
+
+
 /* Mobile Responsiveness */
 @media screen and (max-width: 480px) {
     .container {
