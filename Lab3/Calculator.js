@@ -43,9 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         totalBillInput.value = convertedTotalBill.toFixed(2);
     }
 
-    // Update tip percentage display
+    // Update tip percentage display and calculate tip when slider is moved
     tipPercentageInput.addEventListener('input', (e) => {
-        tipPercentageDisplay.textContent = `${e.target.value}%`;
+        const tipValue = e.target.value;
+        tipPercentageDisplay.textContent = `${tipValue}%`;
         calculateTip();
     });
 
