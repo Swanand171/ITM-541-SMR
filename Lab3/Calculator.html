@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+    <div class="container">
+        <h3>ITMD541 - Lab3 - Swanand Mohan Rudrawar</h2> 
+        <h1>Tip Calculator</h1>
+        <form id="tipCalculatorForm">
+            <div class="form-group">
+                <label for="billTotal">Bill Total ($)</label>
+                <input 
+                    type="text" 
+                    id="billTotal" 
+                    name="billTotal" 
+                    placeholder="Enter bill amount" 
+                    required
+                >
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="tipPercentage">Tip Percentage (%)</label>
+                <input 
+                    type="range" 
+                    id="tipPercentage" 
+                    name="tipPercentage" 
+                    min="0" 
+                    max="100" 
+                    value="0"
+                >
+                <span id="tipPercentageDisplay">0%</span>
+            </div>
+
+            <div class="form-group">
+                <label for="tipAmount">Tip Amount</label>
+                <input 
+                    type="text" 
+                    id="tipAmount" 
+                    name="tipAmount" 
+                    disabled
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="totalBill">Total Bill with Tip</label>
+                <input 
+                    type="text" 
+                    id="totalBill" 
+                    name="totalBill" 
+                    disabled
+                >
+            </div>
+
+            <!-- Extra Credit: Currency Conversion -->
+            <div class="form-group">
+                <label for="currencySelect">Select Currency</label>
+                <select id="currencySelect" name="currencySelect">
+                    <option value="USD">US Dollar ($)</option>
+                    <option value="INR">Indian Rupee (₹)</option>
+                    <option value="JPY">Japanese Yen (¥)</option>
+                </select>
+                <div id="currencyRates">Conversion Rates: $1 USD = ₹84.07 INR | $1 USD = ¥149.34 JPY</div>
+            </div>
+        </form>
+    </div>
+    <script src="Calculator.js"></script>
+</body>
+</html>
