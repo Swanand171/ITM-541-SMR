@@ -1,44 +1,58 @@
-/* Reset some default styling */
+/* Reset and general styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Body styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     color: #333;
 }
 
-/* Container Styling */
+/* Container styling */
 .container {
-    background-color: #fff;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     text-align: center;
-    transition: transform 0.2s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
+    transform: translateY(10px);
 }
 
-.container:hover {
-    transform: scale(1.02);
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-h1 {
-    font-size: 2rem;
+/* Title styling */
+h1, h2 {
+    color: #3b5998;
     margin-bottom: 1rem;
-    color: #444;
 }
 
-/* Form Styling */
+h2 {
+    font-size: 1.2rem;
+    color: #6a89cc;
+}
+
+/* Form styling */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -48,26 +62,33 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #666;
+    color: #4a4a4a;
 }
 
-input[type="text"], 
-input[type="range"], 
+input[type="text"],
+input[type="range"],
 select {
     width: 100%;
     padding: 12px;
     border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
-    transition: all 0.3s ease;
     outline: none;
+    transition: all 0.3s ease;
 }
 
+/* Input styling */
 input[type="text"]:focus, 
 input[type="range"]:focus,
 select:focus {
-    border-color: #ff9a9e;
-    box-shadow: 0 0 5px rgba(255, 154, 158, 0.5);
+    border-color: #3b5998;
+    box-shadow: 0 0 8px rgba(59, 89, 152, 0.3);
+}
+
+input[type="text"]:hover, 
+input[type="range"]:hover, 
+select:hover {
+    border-color: #3b5998;
 }
 
 input[type="range"] {
@@ -83,28 +104,38 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 15px;
     height: 15px;
-    background-color: #ff9a9e;
+    background-color: #3b5998;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Disabled Fields */
+/* Disabled fields styling */
 input:disabled {
     background-color: #f7f7f7;
+    color: #666;
+    font-weight: bold;
     cursor: not-allowed;
-    color: #888;
 }
 
-/* Error Message */
+/* Bold text for Tip Amount and Total Bill with Tip fields */
+#tipAmount,
+#totalBill {
+    font-weight: bold;
+    color: #3b5998;
+    background-color: #f0f4f8;
+    border: none;
+}
+
+/* Error Message styling */
 .error-message {
     color: #ff4d4d;
     font-size: 0.9em;
-    margin-top: 5px;
     font-weight: bold;
+    margin-top: 5px;
 }
 
-/* Conversion Rates Styling */
+/* Currency conversion rate styling */
 #currencyRates {
     font-size: 0.9em;
     color: #666;
@@ -112,30 +143,12 @@ input:disabled {
     margin-top: 15px;
 }
 
-/* Hover Effect */
-input[type="text"]:hover, 
-input[type="range"]:hover, 
-select:hover {
-    border-color: #ff9a9e;
+/* Container hover effect */
+.container:hover {
+    transform: scale(1.02);
 }
 
-h3 {
-    text-align: center;
-    color: #555;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-
-#tipAmount,
-#totalBill {
-    font-weight: bold;
-    color: #333;
-}
-
-
-
-/* Mobile Responsiveness */
+/* Mobile responsiveness */
 @media screen and (max-width: 480px) {
     .container {
         width: 90%;
